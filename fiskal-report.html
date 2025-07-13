@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fiskal Compliance Audit – Technical Breakdown</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Georgia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" /> <!-- or reuse your style block -->
+</head>
+<body>
+  <main class="container">
+    <h1>Fiskal Compliance Audit – Technical Breakdown</h1>
+    
+    <p><em>During hotel systems migration in Germany, I identified that a compliance-critical fiscal integration (fiskalTrust / TSE) was not properly configured across dozens of sites.</em></p>
+
+    <h2>🧩 Discovery</h2>
+    <p>I began by analyzing how the fiscal middleware was meant to be deployed across our LEG servers and admin dashboard. I then created a tool to sweep SQL queries across servers to verify presence and configuration of the GCI integration layer...</p>
+
+    <h2>🔍 Findings</h2>
+    <ul>
+      <li>~33% of properties were not properly configured</li>
+      <li>PEP deployments failed to initialize TSE signing</li>
+      <li>OnQ audit logs revealed unsigned transactions</li>
+    </ul>
+
+    <h2>🛠️ Technical Tools</h2>
+    <ul>
+      <li>PowerShell sweep for SQL audit across hotel list</li>
+      <li>Automated QR code decoder using <code>ecdsa</code> and <code>qrcode</code> in Python</li>
+      <li>Log validation and crypto signature inspection</li>
+    </ul>
+
+    <h2>✅ Result</h2>
+    <p>Escalated findings led to rollout delays and new checks being added. I was later embedded with the openings team for deeper fiskal deployment support.</p>
+
+    <p><a href="https://github.com/yourusername/fiskal-tools" target="_blank">→ View Code Samples on GitHub</a></p>
+    <p><a href="index.html">← Back to Portfolio</a></p>
+  </main>
+</body>
+</html>
