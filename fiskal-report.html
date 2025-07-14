@@ -2,39 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fiskal Compliance Audit – Technical Breakdown</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Georgia&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" /> <!-- or reuse your style block -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FiskalTrust – Case Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {--dark:#141414;--primary:#1a3c77;--accent:#0066cc;--bg:#f4f7fb;--muted:#555;}
+    body {margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dark);}
+    .hero {background: linear-gradient(-45deg, #1a3c77, #004a99, #007acc, #1a3c77); background-size: 600% 600%; animation: gradientShift 12s ease infinite; padding: 3rem 1rem; text-align: center; color: #fff;}
+    @keyframes gradientShift {0% {background-position: 0 50%} 50% {background-position: 100% 50%} 100% {background-position: 0 50%}}
+    .container {max-width: 960px; margin: 3rem auto; background: #fff; border-radius: 8px; padding: 2rem; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04)}
+    h1, h2 {color: var(--primary)}
+    h2 {margin-top: 2rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: .2rem}
+    pre {background: #f0f0f0; padding: 1rem; overflow-x: auto; border-radius: 6px; font-size: 0.85rem;}
+    code {font-family: monospace; white-space: pre-wrap;}
+    .section {margin-bottom: 2rem;}
+    footer {text-align: center; font-size: 0.85rem; color: var(--muted); padding: 2rem 1rem; margin-top: 4rem; border-top: 1px solid #ccc;}
+  </style>
 </head>
 <body>
-  <main class="container">
-    <h1>Fiskal Compliance Audit – Technical Breakdown</h1>
-    
-    <p><em>During hotel systems migration in Germany, I identified that a compliance-critical fiscal integration (fiskalTrust / TSE) was not properly configured across dozens of sites.</em></p>
+<div class="hero">
+  <h1>Fiscal Integration Validation & Audit Enhancement</h1>
+  <p>A case study in German TSE audit readiness, system diagnostics, and secure QR signing analysis</p>
+</div>
+<main class="container">
+  <div class="section">
+    <h2>Preparation</h2>
+<p>
+As part of the German hotel system migrations, I conducted an in-depth technical assessment of the FiskalTrust (TSE) compliance configuration for fiscal audit logging.
+I began by reviewing internal documentation on the Fiskal setup process within our administrative dashboard, including Linux middleware installation procedures on the LEG servers. This also involved studying official TSE documentation to understand the structure of the fiskal intrface, signature requirements, and compliance standards under Technical
+Guideline BSI TR-03153, KassenSichV / DSFinV-K.
+To ensure consistency in implementation, I mapped out a standard operating procedure for fiscal validation during German migrations.
+</p>
+<h2>Discovery</h2>
+<p>While on-site at one of the properties, I ran an SQL script on the local database to validate the installation status of the Fiskal integration by checking presence or absence of a certain integration type. It was not installed. Upon reviewing a few additional German sites, I recognized a wider pattern and manually confirmed similar gaps.
+This prompted development of a  <a href="">tool</a>, which programmatically swept all 40+ German hotel instances for fiscal module status — revealing that 33% had no software installation to work with mandatory fiskal interface.
 
-    <h2>🧩 Discovery</h2>
-    <p>I began by analyzing how the fiscal middleware was meant to be deployed across our LEG servers and admin dashboard. I then created a tool to sweep SQL queries across servers to verify presence and configuration of the GCI integration layer...</p>
+ Further started reviewing the dedicated property fiscal reports to identify functional or compliance issues, not just uninstalled integration. I reused the powershell script above, replacing the invoked sql command and changed connection to a report database. I uncovered some consistent issues, from signatures not created to transactions not sent to the TSE server.
+</p>
+<h2>Outcomes</h2>
+<p>
 
-    <h2>🔍 Findings</h2>
-    <ul>
-      <li>~33% of properties were not properly configured</li>
-      <li>PEP deployments failed to initialize TSE signing</li>
-      <li>OnQ audit logs revealed unsigned transactions</li>
-    </ul>
-
-    <h2>🛠️ Technical Tools</h2>
-    <ul>
-      <li>PowerShell sweep for SQL audit across hotel list</li>
-      <li>Automated QR code decoder using <code>ecdsa</code> and <code>qrcode</code> in Python</li>
-      <li>Log validation and crypto signature inspection</li>
-    </ul>
-
-    <h2>✅ Result</h2>
-    <p>Escalated findings led to rollout delays and new checks being added. I was later embedded with the openings team for deeper fiskal deployment support.</p>
-
-    <p><a href="https://github.com/yourusername/fiskal-tools" target="_blank">→ View Code Samples on GitHub</a></p>
-    <p><a href="index.html">← Back to Portfolio</a></p>
-  </main>
+•   Following escalation, migrations for German region have been temporarily put on hold, to prevent any potential non-compliance issues. 
+</p>
+<p>
+•   I was temporarily assigned to the openings team to deepen my understanding of TSE behavior, resulting in creation of detailed documentation for fiskal processes.
+</p>
+  <footer>
+    &copy; 2025 Tikhon Likhachev · Hospitality Systems · fiskalcheck.dev
+  </footer>
+</main>
 </body>
 </html>
