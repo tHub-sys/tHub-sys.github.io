@@ -79,14 +79,13 @@ h1 {
 <p>
 As our team was preparing for German hotel systems migration, I was responsible for validating fiscal integrations and supporting technical readiness during hotel onboarding.
 I began by reviewing documentation on the fiscal setup process within our administrative dashboard, as well as Linux middleware installation procedures on a property-level server. This also involved studying official TSE documentation to understand the structure of the fiscal interface, signature requirements, and relevant technical standards - 
-Guideline BSI TR-03153, KassenSichV / DSFinV-K.
-To ensure consistency in implementation, I mapped out a standard operating procedure for fiscal validation during German migrations.
+Guideline BSI TR-03153, KassenSichV / DSFinV-K. 
+To ensure consistency in implementation, I mapped out an SOP for fiscal validation during German migrations.
 </p>
 <h2>Discovery</h2>
-<p>While on-site at one of the properties, I ran an SQL script on the local database to validate the installation status of the fiscal integration by checking presence or absence of a certain integration type. It was not installed. Upon reviewing a few additional German sites, I recognized a wider pattern and manually confirmed similar gaps.
-This prompted development of a  <a href="Sweep_tool.ps1" download>tool</a>, which programmatically swept 40+ German hotel instances for fiscal module status — revealing that 33% had no software installation to work with mandatory fiscal interface.
-
- I then began reviewing the dedicated property fiscal reports to identify functional issues, not just uninstalled integration. I reused the powershell script above, replacing the invoked sql command and changed connection to a report database. I uncovered some consistent issues, from signatures not created to transactions not sent to the TSE server, with total amount of non-compliant transactions amounting to millions.
+<p>While on-site at one of the properties, I ran quick SQL check on the local database to validate the installation status of the fiscal integration by checking presence of a certain integration type. It was not installed. Upon reviewing a few additional German sites, I recognized a wider pattern and manually confirmed similar gaps.
+This prompted development of a  <a href="Sweep_tool.ps1" download>tool</a>, which swept 40+ German hotel instances for fiscal module status — revealing that <b>33%</b> had <b>NO</b> software installation to work with mandatory fiscal interface.
+ I then began reviewing the dedicated property fiscal reports to identify functional issues, not just uninstalled integration. I reused the powershell script above, replacing the invoked sql command and changed connection to a report database. I uncovered some consistent issues, from signatures not created to transactions not sent to the TSE server. Turns out the total number of transactions amounts to <b>millions.</b>
 </p>
 <h2>Outcomes</h2>
 <p>
@@ -98,6 +97,9 @@ This prompted development of a  <a href="Sweep_tool.ps1" download>tool</a>, whic
 </p>
 <p>
 •   The tool has since been adopted by our team to use in preparation for German migrations.
+</p>
+<p>
+•   I learned that fiscal compliance systems rarely scream when they’re broken — they just quietly log non-compliant transactions.
 </p>
 
 </main>
