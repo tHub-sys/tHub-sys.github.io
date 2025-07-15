@@ -43,6 +43,35 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  text-align: left;
+}
+
+
+.right {
+  text-align: right;
+}
+
+.contact-link {
+  color: inherit;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-link:hover {
+
+  color: royalblue ; /* Override general 'a:hover' */
+  text-decoration: none !important;
+}
+
+
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
@@ -62,6 +91,19 @@
       padding: 2rem 1.5rem;
     }
 
+    .split {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .about,
+    .field-insights {
+      flex: 1;
+      min-width: 280px;
+    }
+
     .card {
       background: #ffffff;
       padding: 2rem;
@@ -70,14 +112,23 @@
       margin-bottom: 2rem;
     }
 
+    h1 {
+      font-size: 1.8rem;
+      color: var(--light);
+      margin-bottom: 1rem;
+    }
+
     h2 {
       font-size: 1.4rem;
       color: var(--accent);
       margin-bottom: 0.5rem;
     }
 
+    h3{}
+
     p {
       line-height: 1.6;
+
     }
 
     a {
@@ -98,27 +149,64 @@
       padding: 2rem 1rem;
       margin-top: 3rem;
     }
+
+
   </style>
 </head>
 <body>
 
 <div class="hero">
+      <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dot" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1.2" fill="#ffffff22"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#dot)" />
+</svg>
   <h1>Tikhon Likhachev</h1>
-  <p>Implementation lead | Global Deployment & Change Management</p>
 </div>
 
-<main class="container">
+<main class="container split">
+  <!-- About Me section -->
+  <section class="about">
+    <h1>About Me</h1>
+    <div class="card">
+      <p>
+        I am an implementation lead in global deployment and change management team. 
+        I enjoy bridging the gap between people and tech — thriving in hybrid, client-facing roles. Long term, I aim to bring sharp strategic thinking to complex tech environments.
+      </p>
+    </div>
+<p class="contact-container">
+  <span class="left">
+    <a class="contact-link" href="mailto:tikhon.email@gmail.com">📥  [tikhon.email@gmail.com]</a>
+  </span>
+  <span class="right">
+    <a class="contact-link" href="tel:+447516521000">📱 [+44 7516 521000]</a>
+  </span>
+</p>
 
-  <div class="card">
-    <h2>Fiscal case</h2>
-    <p></p>
-    <a href="fiskal-report.html">See full notes →</a>
-  </div>
+  </section>
 
+  <!-- Field Insights section -->
+  <section class="field-insights">
+    <h1>Field Insights</h1>
+    <div class="card">
+      <h2>Fiscal case</h2>
+      <p>Preventing fiscal compliance failures before they escalate</p>
+      <a href="fiskal-report.html">See full notes...</a>
+    </div>
+
+    <div class="card">
+      <h2>Automation integration</h2>
+      <p>Accelerating Hotel Configurations with Internal Tooling</p>
+      <a href="automation.html">See full notes...</a>
+    </div>
+  </section>
 </main>
 
 <footer>
-  &copy; 2025 Tikhon Likhachev · <a href="mailto:tikhon.email@gmail.com">tikhon.email@gmail.com</a> · <a href="https://tikhon-likhachev.net">tikhon-likhachev.net</a>
+  &copy; 2025 Tikhon Likhachev · 
 </footer>
 
 </body>
