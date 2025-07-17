@@ -13,10 +13,19 @@
       --bg: #f4f7fb;
       --muted: #555;
     }
+
     footer {
-  text-align: center;
-  color: grey;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #ccc;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    a:hover, button:hover {
+  background-color: #005bb5 !important;
 }
+
 
 .container{
     padding: 4rem 15rem;
@@ -44,7 +53,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 250px; /* or desired height */
+  height: 200px; /* or desired height */
   overflow: hidden;
   text-align: center;
   
@@ -71,9 +80,24 @@ h1 {
   </defs>
   <rect width="100%" height="100%" fill="url(#dot)" />
 </svg>
-<h1>Preventing fiscal compliance failures before they escalate</h1>
+<h1>Uncovering critical fiscal gaps in German hotel rollout.</h1>
 </div>
 <main class="container">
+  <a href="index.html" style="
+    background-color: var(--accent);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;">
+    <--
+  </a>
+</div>
+
   <div class="section">
     <h2>Preparation</h2>
 <p>
@@ -83,28 +107,18 @@ Guideline BSI TR-03153, KassenSichV / DSFinV-K.
 To ensure consistency in implementation, I mapped out an SOP for fiscal validation during German migrations.
 </p>
 <h2>Discovery</h2>
-<p>While on-site at one of the properties, I ran quick SQL check on the local database to validate the installation status of the fiscal integration by checking presence of a certain integration type. It was not installed. Upon reviewing a few additional German sites, I recognized a wider pattern and manually confirmed similar gaps.
+<p>While on-site at one of the properties, I ran quick SQL check on the local database to validate the installation status of the fiscal integration by checking presence of a certain integration type. It was not installed. Upon reviewing a few additional German sites, I recognised a wider pattern and manually confirmed similar gaps.
 This prompted development of a  <a href="Sweep_tool.ps1" download>tool</a>, which swept 40+ German hotel instances for fiscal module status — revealing that <b>33%</b> had <b>NO</b> software installation to work with mandatory fiscal interface.
  I then began reviewing the dedicated property fiscal reports to identify functional issues, not just uninstalled integration. I reused the powershell script above, replacing the invoked sql command and changed connection to a report database. I uncovered some consistent issues, from signatures not created to transactions not sent to the TSE server. Turns out the total number of transactions amounts to <b>millions.</b>
 </p>
 <h2>Outcomes</h2>
-<p>
-
-•   Following escalation, migrations for German region have been temporarily paused, to prevent any potential costly compliance issues. 
-</p>
-<p>
-•   I was temporarily assigned to the openings team to deepen my understanding of TSE behavior, resulting in creation of detailed documentation for fiscal processes.
-</p>
-<p>
-•   The tool has since been adopted by our team to use in preparation for German migrations.
-</p>
-<p>
-•   I learned that fiscal compliance systems rarely scream when they’re broken — they just quietly log non-compliant transactions.
-</p>
-
+<p><strong>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Following escalation, migrations for German region have been temporarily paused, to prevent any potential costly compliance issues. </strong><p>
+<p><strong>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I was temporarily assigned to the openings team to deepen my understanding of TSE behavior, resulting in creation of detailed documentation for fiscal processes.</strong></p>
+<p><strong>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The tool has since been adopted by our team to use in preparation for German migrations.</strong></p>
+<p><strong>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I learned that fiscal compliance systems rarely scream when they’re broken — they just quietly log non-compliant transactions.</strong></p>
 </main>
 <footer>
-  &copy; 2025 Tikhon Likhachev · <a href="mailto:tikhon.email@gmail.com">tikhon.email@gmail.com</a> 
+  &copy; 2025 Tikhon Likhachev
 </footer>
 </body>
 </html>
