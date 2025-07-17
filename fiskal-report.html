@@ -34,7 +34,14 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
   margin-bottom: 3rem;
   line-height: 1.7;
+  max-width: 960px;
+  margin:auto;
 }
+* {
+  box-sizing: border-box;
+}
+
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -68,6 +75,28 @@ h1 {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  a[href="index.html"] {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
   </style>
 </head>
 <body>
