@@ -33,10 +33,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 200px;
+      height: 180px;
       text-align: center;
       color: white;
-      position: relative; 
+      position: relative;
     }
 
     @keyframes gradientShift {
@@ -44,121 +44,72 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-.contact-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.contact-card {
-  margin-top: auto;
-}
-.left {
-  text-align: left;
-}
-
-
-
-.right {
-  text-align: right;
-}
-
-.contact-link {
-  color: inherit;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-weight: bold;
-  font-style: italic;
-}
-
-.contact-link:hover {
-
-  color: royalblue ; /* Override general 'a:hover' */
-  text-decoration: none !important;
-}
-
-
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin: 0;
     }
 
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 1rem auto 0;
-    }
-
     .container {
-      max-width: 960px;
+      max-width: 800px;
       margin: auto;
-      padding: 2rem 1.5rem;
-       align-items: stretch; 
+      padding: 2rem 0.2rem;
     }
 
-.split {
-  display: flex;
-  gap: 2rem;
-  align-items: stretch;
-}
-
-.about,
-.field-insights {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:  1.5rem;
+    }
 
     .card {
       background: #ffffff;
-      padding: 2rem;
+      padding: 2rem 2rem;
       border-radius: 8px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      margin-bottom: 2rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
-       .card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-    .card-link1 {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  text-align: center;
 
-}
+        .card1 {
+      background: #ffffff;
+      padding: 2rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
 
-.card-hover {
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.card-hover:hover {
-  background-color: #e8f0fe; /* light accent background */
-  transform: translateY(-4px);
-  cursor: pointer;
-}
-
+    .card1:hover {
+      background-color: #e8f0fe;
+      transform: translateY(-4px);
+      cursor: pointer;
+    }
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: var(--light);
       margin-bottom: 1rem;
+      text-align: center;
     }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: var(--accent);
       margin-bottom: 0.5rem;
     }
 
-
     p {
-      line-height: 1.6;
-
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 0;
     }
 
     a {
@@ -166,107 +117,88 @@
       text-decoration: none;
     }
 
+    .contact-link {
+      color: inherit;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    .contact-link:hover {
+      color: royalblue;
+      text-decoration: none !important;
+    }
+
     footer {
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: #777;
       border-top: 1px solid #ccc;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
+      padding: 1.5rem 1rem;
+      margin-top: 2rem;
     }
-@media (max-width: 768px) {
-  .split {
-    flex-direction: column;
-  }
 
-  .contact-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
 
-  .left,
-  .right {
-    text-align: left;
-  }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    padding: 0 1rem;
-  }
-}
-
-body, p, a {
-  word-wrap: break-word;
-}
-
-
+      p, .contact-link {
+        font-size: 0.95rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-<div class="hero">
-      <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <pattern id="dot" width="22" height="22" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1.2" fill="#ffffff22"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#dot)" />
-</svg>
-  <h1>Tikhon Likhachev</h1>
-</div>
-
-<main class="container split">
-  <!-- LEFT COLUMN -->
-<div class="about">
-  <h1>About Me</h1>
-
-  <!-- About Me Card -->
-  <div class="card">
-    <p>
-      Technically skilled professional with a BSc in Computer Science and 3+ years of hybrid experience across customer-facing operations and enterprise technology. 
-    </p>
+  <div class="hero">
+    <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dot" width="22" height="22" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1.2" fill="#ffffff22"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dot)" />
+    </svg>
+    <h1>Tikhon Likhachev</h1>
   </div>
 
-  <!-- Contact Info Card -->
-  <div class="card contact-card">
-    Email: <a class="contact-link" href="mailto:tikhon.email@gmail.com">tikhon.email@gmail.com</a><br></br>
-    Phone: <a class="contact-link" href="tel:+4407516521000">+44 (0) 7516 521 000</a>
-  </div>
-</div>
+  <main class="container">
+    <div class="grid">
+      <div class="card">
+        <p>
+          Technically skilled professional with a BSc in Computer Science and 3+ years of hybrid experience across customer-facing operations and enterprise technology.
+        </p>
+      </div>
 
 
 
-  <!-- RIGHT COLUMN -->
-  <div class="field-insights">
-    <h1>Relevant Links</h1>
-    
-    <a href="automation.html" class="card-link">
-      <div class="card card-hover">
+      <div class="card1" onclick="window.location.href='automation.html'">
         <h2>Automation integration</h2>
         <p>Accelerating hotel systems configurations with internal tooling</p>
       </div>
-    </a>
 
-    <!-- Automation Integration -->
-    <a href="Tikhon Likhachev CV.pdf" class="card-link1">
-      <div class="card card-hover">
-        <h2>Download CV</h2>
-        <p></p>
+      <div class="card">
+        <strong>Email:</strong> <a class="contact-link" href="mailto:tikhon.email@gmail.com">tikhon.email@gmail.com</a>
+        <strong>Phone:</strong> <a class="contact-link" href="tel:+4407516521000">+44 (0) 7516 521 000</a>
       </div>
-    </a>
-  </div>
-</main>
+      <div class="card">
+        <strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/tikhon-likhachev/">www.linkedin.com/in/tikhon-likhachev</a>
+        <strong>Download CV:</strong> <a class="contact-link" href="Tikhon Likhachev CV.pdf">Tikhon Likhachev CV.pdf</a>
+      </div>
 
+    </div>
+  </main>
 
-<footer>
-  &copy; 2025 Tikhon Likhachev · 
-</footer>
+  <footer>
+    &copy; 2025 Tikhon Likhachev · 
+  </footer>
 
 </body>
 </html>
